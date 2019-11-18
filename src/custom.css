@@ -3,6 +3,11 @@
   --ck-focus-ring: 0px;
   --ck-color-shadow-inner: none;
   --ck-color-toolbar-border: #eee;
+  --ck-color-link-default: #ed624b;
+}
+
+.ck-content a {
+  color: #ed624b !important;
 }
 
 .ck.ck-editor__editable {
