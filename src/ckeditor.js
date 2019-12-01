@@ -41,10 +41,14 @@ class AddMedia extends Plugin {
 				tooltip: true
 			} );
 
+			/* eslint-disable */
+
 			view.on( 'execute', function() {
 				const event = new CustomEvent( 'insert-media', { detail: editor } );
 				document.dispatchEvent( event );
 			} );
+
+			/* eslint-enable */
 
 			return view;
 		} );
