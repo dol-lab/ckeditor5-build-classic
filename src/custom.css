@@ -6,10 +6,6 @@
   --ck-color-link-default: #ed624b;
 }
 
-.ck-content a {
-  color: #ed624b !important;
-}
-
 .ck.ck-editor__editable {
   border: 0;
 }
@@ -17,4 +13,16 @@
 .ck.ck-toolbar {
   border: 0;
   border-top: 1px solid var(--ck-color-toolbar-border);
+}
+
+/* Overrides */
+
+.ck-content a {
+  color: #ed624b !important;
+}
+
+/* defaultspace.css:148 */
+.ck-content .widget ul {
+  list-style: disc !important;
+  margin: 1em 1em 1em 1.25em !important;
 }
