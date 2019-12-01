@@ -9,7 +9,6 @@ import ClassicEditorBase from '@ckeditor/ckeditor5-editor-classic/src/classicedi
 import Essentials from '@ckeditor/ckeditor5-essentials/src/essentials';
 import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold';
 import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic';
-/* import CKFinder from '@ckeditor/ckeditor5-ckfinder/src/ckfinder'; */
 import Heading from '@ckeditor/ckeditor5-heading/src/heading';
 import Image from '@ckeditor/ckeditor5-image/src/image';
 import ImageStyle from '@ckeditor/ckeditor5-image/src/imagestyle';
@@ -30,25 +29,25 @@ import addMediaIcon from './add-media.svg';
 
 class AddMedia extends Plugin {
 	init() {
-		const editor = this.editor
+		const editor = this.editor;
 
-		editor.ui.componentFactory.add('addMedia', (locale) => {
-				const view = new ButtonView(locale)
+		editor.ui.componentFactory.add( 'addMedia', locale => {
+			const view = new ButtonView( locale );
 
-				view.set({
-					class: 'insert-media',
-					label: 'Add media',
-					icon: addMediaIcon,
-					tooltip: true
-				})
+			view.set( {
+				class: 'insert-media',
+				label: 'Add media',
+				icon: addMediaIcon,
+				tooltip: true
+			} );
 
-				view.on('execute', function () {
-					const event = new CustomEvent('insert-media', { detail: editor })
-					document.dispatchEvent(event)
-				})
+			view.on( 'execute', function() {
+				const event = new CustomEvent( 'insert-media', { detail: editor } );
+				document.dispatchEvent( event );
+			} );
 
-				return view
-		})
+			return view;
+		} );
 	}
 }
 
@@ -61,7 +60,6 @@ ClassicEditor.builtinPlugins = [
 	Essentials,
 	Bold,
 	Italic,
-	/* CKFinder, */
 	Heading,
 	Image,
 	ImageStyle,
@@ -79,7 +77,6 @@ ClassicEditor.defaultConfig = {
 	toolbar: {
 		items: [
 			'addMedia',
-			'imageUpload',
 			'mediaEmbed',
 			'|',
 			'heading',
@@ -91,14 +88,6 @@ ClassicEditor.defaultConfig = {
 			'|',
 			'undo',
 			'redo'
-		]
-	},
-	image: {
-		toolbar: [
-			'imageStyle:full',
-			'imageStyle:side',
-			'|',
-			'imageTextAlternative'
 		]
 	},
 	// This value must be kept in sync with the language defined in webpack.config.js.
