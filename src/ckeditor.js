@@ -25,7 +25,7 @@ import './custom.css';
 import Autosave from '@ckeditor/ckeditor5-autosave/src/autosave';
 import Plugin from '@ckeditor/ckeditor5-core/src/plugin';
 import ButtonView from '@ckeditor/ckeditor5-ui/src/button/buttonview';
-import addMediaIcon from './add-media.svg';
+import addMediaIcon from './paperclip.svg';
 
 class AddMedia extends Plugin {
 	init() {
