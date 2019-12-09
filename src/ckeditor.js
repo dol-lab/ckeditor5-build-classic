@@ -14,6 +14,7 @@ import Image from '@ckeditor/ckeditor5-image/src/image';
 import ImageStyle from '@ckeditor/ckeditor5-image/src/imagestyle';
 import ImageToolbar from '@ckeditor/ckeditor5-image/src/imagetoolbar';
 import ImageUpload from '@ckeditor/ckeditor5-image/src/imageupload';
+import ImageCaption from '@ckeditor/ckeditor5-image/src/imagecaption';
 import Link from '@ckeditor/ckeditor5-link/src/link';
 import List from '@ckeditor/ckeditor5-list/src/list';
 import MediaEmbed from '@ckeditor/ckeditor5-media-embed/src/mediaembed';
@@ -69,6 +70,7 @@ ClassicEditor.builtinPlugins = [
 	ImageStyle,
 	ImageToolbar,
 	ImageUpload,
+	ImageCaption,
 	Link,
 	List,
 	MediaEmbed,
@@ -96,10 +98,11 @@ ClassicEditor.defaultConfig = {
 	},
 	image: {
 		toolbar: [
-			'imageStyle:full',
-			'imageStyle:side',
+			'imageTextAlternative',
 			'|',
-			'imageTextAlternative'
+			'imageStyle:alignLeft',
+			'imageStyle:full',
+			'imageStyle:alignRight'
 		]
 	},
 	// This value must be kept in sync with the language defined in webpack.config.js.
