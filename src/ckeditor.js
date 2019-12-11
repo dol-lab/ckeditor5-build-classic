@@ -47,6 +47,9 @@ class AddMedia extends Plugin {
 			view.on( 'execute', function() {
 				const event = new CustomEvent( 'insert-media', { detail: editor } );
 				document.dispatchEvent( event );
+
+				const insertPosition = editor.model.document.selection.getFirstPosition()
+				spacesPostEditorGlobals.activeEditor.lastCursorPosition = insertPosition
 			} );
 
 			/* eslint-enable */
@@ -100,9 +103,7 @@ ClassicEditor.defaultConfig = {
 		toolbar: [
 			'imageTextAlternative',
 			'|',
-			'imageStyle:alignLeft',
 			'imageStyle:full',
-			'imageStyle:alignRight'
 		]
 	},
 	// This value must be kept in sync with the language defined in webpack.config.js.
