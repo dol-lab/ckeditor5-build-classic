@@ -48,8 +48,11 @@ class AddMedia extends Plugin {
 				const event = new CustomEvent( 'insert-media', { detail: editor } );
 				document.dispatchEvent( event );
 
-				const insertPosition = editor.model.document.selection.getFirstPosition()
-				spacesPostEditorGlobals.activeEditor.lastCursorPosition = insertPosition
+				const insertPosition = editor.model.document.selection.getFirstPosition();
+
+				if (typeof spacesPostEditorGlobals !== 'undefined') {
+					spacesPostEditorGlobals.activeEditor.lastCursorPosition = insertPosition;
+				}
 			} );
 
 			/* eslint-enable */
